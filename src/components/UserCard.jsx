@@ -2,29 +2,6 @@ import React from 'react';
 
 const UserCard = ({ user, onEdit, onDelete, isDeleting }) => {
 
-  const formatPhone = (phone) => {
-    const cleaned = phone.replace(/\D/g, '');
-    
-    if (cleaned.length === 10) {
-      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
-    }
-    
-    return phone; 
-  };
-
-  const formatWebsite = (website) => {
-    if (!website) return '';
-    
-    return website.replace(/^https?:\/\//, '');
-  };
-
-  const handleWebsiteClick = (website) => {
-    if (!website) return;
-    
-    const url = website.startsWith('http') ? website : `https://${website}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div className="user-card">
       <div className="user-card-header">

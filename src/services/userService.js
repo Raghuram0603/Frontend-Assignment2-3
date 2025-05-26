@@ -37,29 +37,29 @@ export const getUsers = async () => {
   }
 };
 
-export const getUserById = async (id) => {
-  try {
-    await simulateDelay();
-    const response = await fetch(`${API_BASE_URL}/users/${id}`);
-    const user = await handleResponse(response);
+// export const getUserById = async (id) => {
+//   try {
+//     await simulateDelay();
+//     const response = await fetch(`${API_BASE_URL}/users/${id}`);
+//     const user = await handleResponse(response);
     
-    return {
-      id: user.id,
-      name: user.name,
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      website: user.website,
-      company: user.company?.name || '',
-      street: user.address?.street || '',
-      city: user.address?.city || '',
-      zipcode: user.address?.zipcode || ''
-    };
-  } catch (error) {
-    console.error('Error fetching user:', error);
-    throw new Error('Failed to fetch user details. Please try again later.');
-  }
-};
+//     return {
+//       id: user.id,
+//       name: user.name,
+//       username: user.username,
+//       email: user.email,
+//       phone: user.phone,
+//       website: user.website,
+//       company: user.company?.name || '',
+//       street: user.address?.street || '',
+//       city: user.address?.city || '',
+//       zipcode: user.address?.zipcode || ''
+//     };
+//   } catch (error) {
+//     console.error('Error fetching user:', error);
+//     throw new Error('Failed to fetch user details. Please try again later.');
+//   }
+// };
 
 export const createUser = async (userData) => {
   try {
